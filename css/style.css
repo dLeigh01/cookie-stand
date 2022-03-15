@@ -20,54 +20,30 @@ nav h2 {
   margin-bottom: 20px;
 }
 
-section {
-  margin-top: 20px;
-  margin-left: 25%;
-  background-color: salmon;
-  max-width: fit-content;
-  padding: 10px;
-  line-height: 1.3em;
-}
-
-#seattle {
-  position: relative;
-}
-
-#tokyo {
-  background-color: inherit;
-  position: absolute;
-  margin-left: 10em;
-  padding: inherit;
-  margin-top: -21.8em;
-}
-
-#dubai {
-  background-color: inherit;
-  position: absolute;
-  margin-left: 20.3em;
-  padding: inherit;
-  margin-top: -21.8em;
-}
-
-#paris {
-  background-color: inherit;
-  position: absolute;
-  margin-left: 31.3em;
-  padding: inherit;
-  margin-top: -21.8em;
-}
-
-#lima {
-  background-color: inherit;
-  position: absolute;
-  margin-left: 41.6em;
-  padding: inherit;
-  margin-top: -21.8em;
-}
-
-section h2 {
-  text-indent: 10px;
-  margin-bottom: 5px;
+table {
+  margin: auto;
   font-size: 2em;
-  background-color: dark;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+thead th {
+  border: none;
+  border-right: 2px solid black;
+}
+
+tbody {
+  background-color: salmon;
+}
+
+td {
+  text-align: center;
+}
+
+tfoot th {
+  border: none;
+  border-right: 2px solid black;
 }
