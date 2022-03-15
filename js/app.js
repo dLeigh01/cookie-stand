@@ -7,6 +7,7 @@ let seattle = {
   maxCust: 65,
   avgSale: 6.3,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  display: [],
   currentHour: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
@@ -30,7 +31,8 @@ let seattle = {
     for(let i = 0; i < this.hours.length; i++) {
       let liElem = document.createElement('li');
       let hourTotal = Math.ceil(this.currentHour(this.minCust, this.maxCust) * this.avgSale);
-      liElem.textContent = `${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`;
+      this.display.push(`${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`);
+      liElem.textContent = this.display[i];
       ulElem.appendChild(liElem);
       total += hourTotal;
     }
@@ -50,6 +52,7 @@ let Tokyo = {
   maxCust: 24,
   avgSale: 1.2,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  display: [],
   currentHour: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
@@ -73,7 +76,8 @@ let Tokyo = {
     for(let i = 0; i < this.hours.length; i++) {
       let liElem = document.createElement('li');
       let hourTotal = Math.ceil(this.currentHour(this.minCust, this.maxCust) * this.avgSale);
-      liElem.textContent = `${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`;
+      this.display.push(`${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`);
+      liElem.textContent = this.display[i];
       ulElem.appendChild(liElem);
       total += hourTotal;
     }
@@ -93,6 +97,7 @@ let dubai = {
   maxCust: 38,
   avgSale: 3.7,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  display: [],
   currentHour: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
@@ -116,7 +121,8 @@ let dubai = {
     for(let i = 0; i < this.hours.length; i++) {
       let liElem = document.createElement('li');
       let hourTotal = Math.ceil(this.currentHour(this.minCust, this.maxCust) * this.avgSale);
-      liElem.textContent = `${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`;
+      this.display.push(`${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`);
+      liElem.textContent = this.display[i];
       ulElem.appendChild(liElem);
       total += hourTotal;
     }
@@ -136,6 +142,7 @@ let paris = {
   maxCust: 38,
   avgSale: 2.3,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  display: [],
   currentHour: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
@@ -159,7 +166,8 @@ let paris = {
     for(let i = 0; i < this.hours.length; i++) {
       let liElem = document.createElement('li');
       let hourTotal = Math.ceil(this.currentHour(this.minCust, this.maxCust) * this.avgSale);
-      liElem.textContent = `${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`;
+      this.display.push(`${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`);
+      liElem.textContent = this.display[i];
       ulElem.appendChild(liElem);
       total += hourTotal;
     }
@@ -179,6 +187,7 @@ let lima = {
   maxCust: 16,
   avgSale: 4.6,
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
+  display: [],
   currentHour: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
@@ -202,7 +211,8 @@ let lima = {
     for(let i = 0; i < this.hours.length; i++) {
       let liElem = document.createElement('li');
       let hourTotal = Math.ceil(this.currentHour(this.minCust, this.maxCust) * this.avgSale);
-      liElem.textContent = `${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`;
+      this.display.push(`${this.hours[i]}: ${Math.ceil(hourTotal)} cookies`);
+      liElem.textContent = this.display[i];
       ulElem.appendChild(liElem);
       total += hourTotal;
     }
