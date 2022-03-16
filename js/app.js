@@ -35,7 +35,6 @@ StoreStats.prototype.avgCust = function() {
   for(let i = 0; i < hours.length; i++) {
     this.display[i] = Math.ceil(currentHour(this.minCust, this.maxCust) * this.avgSale);
     this.totalCookies += this.display[i];
-    // cookiesPerHour[i] += this.display[i];
     dailyTotal += this.display[i];
   }
 };
@@ -52,7 +51,6 @@ function hourlyTotalArr() {
   for(let i = 0; i < hours.length; i++) {
     for(let j = 0; j < storeList.length; j++) {
       cookiesPerHour[i] += storeList[j].display[i];
-      console.log(i, j, storeList[j].display[i]);
     }
   }
 }
