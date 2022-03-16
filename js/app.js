@@ -35,7 +35,7 @@ StoreStats.prototype.avgCust = function() {
   for(let i = 0; i < hours.length; i++) {
     this.display[i] = Math.ceil(currentHour(this.minCust, this.maxCust) * this.avgSale);
     this.totalCookies += this.display[i];
-    cookiesPerHour[i] += this.display[i];
+    // cookiesPerHour[i] += this.display[i];
     dailyTotal += this.display[i];
   }
 };
@@ -46,6 +46,16 @@ new StoreStats('Tokyo', 3, 24, 1.2);
 new StoreStats('Dubai', 11, 38, 3.7);
 new StoreStats('Paris', 20, 38, 2.3);
 new StoreStats('Lima', 2, 16, 4.6);
+
+// ********************************* HELPER FUNCTION ************************************
+function hourlyTotalArr() {
+  for(let i = 0; i < hours.length; i++) {
+    for(let j = 0; j < storeList.length; j++) {
+      cookiesPerHour[i] += storeList[j].display[i];
+      console.log(i, j, storeList[j].display[i]);
+    }
+  }
+}
 
 // ********************************* DOM MANIPULATION **********************************
 function renderThead() {// _______________________________________Table header
@@ -109,11 +119,11 @@ function renderTfoot() {// _______________________________________Table foot
 
 function renderStore() {// _____________________________________Finish rendering
   renderThead();
-
   for(let i = 0; i < storeList.length; i++) {
     storeList[i].avgCust();
     storeList[i].render();
   }
+  hourlyTotalArr();
   renderTfoot();
 }
 
