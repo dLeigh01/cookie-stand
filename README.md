@@ -33,3 +33,9 @@ N/A
 ### Reflections 03
 
 I was very excited not to need any outside resources for this. I had a couple of occasional issues getting things into the right order to work on the page, but nothing too big.
+
+## Lab 09
+
+### Links and Resources 04
+
+## Reflections 04
