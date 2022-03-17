@@ -12,6 +12,8 @@ let cookiesPerHour = function() {
   return cookiesPerHourlength;
 } ();
 let dailyTotal = 0;
+let tfootElem = document.createElement('tfoot');
+storeTable.appendChild(tfootElem);
 
 // ******************************** RANDOM NUMBER GENERATOR ******************************
 function currentHour(min, max) {
@@ -55,6 +57,7 @@ function hourlyTotalArr() {
   }
 }
 
+
 // ********************************* DOM MANIPULATION **********************************
 function renderThead() {// _______________________________________Table header
   let theadElem = document.createElement('thead');
@@ -63,14 +66,14 @@ function renderThead() {// _______________________________________Table header
   thElem.textContent = '';
   thElem.setAttribute('scope', 'column');
   theadElem.appendChild(thElem);
-
+  
   for(let i = 0; i < hours.length; i++) {
     let thElem = document.createElement('th');
     thElem.textContent = `${hours[i]}`;
     thElem.setAttribute('scope', 'column');
     theadElem.appendChild(thElem);
   }
-
+  
   thElem = document.createElement('th');
   thElem.textContent = 'Daily Total';
   thElem.setAttribute('scope', 'column');
@@ -84,21 +87,19 @@ StoreStats.prototype.render = function() {//______________________Table body
   thElem.textContent = this.store;
   thElem.setAttribute('scope', 'row');
   tbodyElem.appendChild(thElem);
-
+  
   for(let i = 0; i < this.display.length; i++) {
     let tdElem = document.createElement('td');
     tdElem.textContent = this.display[i];
     tbodyElem.appendChild(tdElem);
   }
-
+  
   let tdElem = document.createElement('td');
   tdElem.textContent = this.totalCookies;
   tbodyElem.appendChild(tdElem);
 };
 
 function renderTfoot() {// _______________________________________Table foot
-  let tfootElem = document.createElement('tfoot');
-  storeTable.appendChild(tfootElem);
   let thElem = document.createElement('th');
   thElem.textContent = 'Totals';
   thElem.setAttribute('scope', 'row');
@@ -126,3 +127,27 @@ function renderStore() {// _____________________________________Finish rendering
 }
 
 renderStore();
+
+//*********************************** FORM GRAB ********************************************
+let storeForm = document.getElementById('getForm');
+storeForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let name = event.target.name.value;
+  let min = +event.target.min.value;
+  let max = +event.target.max.value;
+  let avg = +event.target.avg.value;
+
+  let userStore = new StoreStats(name, min, max, avg);
+  userStore.avgCust();
+  userStore.render();
+
+  tfootElem.innerHTML = '';
+  for(let i = 0; i < storeList.length; i++) {
+    cookiesPerHour[i] = 0;
+  }
+  hourlyTotalArr();
+  renderTfoot();
+}
