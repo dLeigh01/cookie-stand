@@ -23,3 +23,13 @@ class 07 notes
 ### Reflections 02
 
 I feel pretty good about today. I kind of ended up moving back and forth across the code working in different random places out of order, so I probably should have had a more thought out plan going in, but in the end I think I may be better with object constructors than objects themselves. The table was much easier to style than the blocks of text I was working with before, so I'm thankful for that.
+
+## Lab 08
+
+### Links and Resources 03
+
+N/A
+
+### Reflections 03
+
+I was very excited not to need any outside resources for this. I had a couple of occasional issues getting things into the right order to work on the page, but nothing too big.
