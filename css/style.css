@@ -202,7 +202,45 @@ td {
 tfoot th {
   border: none;
   border-right: 2px solid black;
-  /* ##### table end ##### */
+}
+
+/* ##### form ##### */
+fieldset {
+  display: flex;
+  flex-direction: column;
+  background-color: darkgray;
+  max-width: fit-content;
+  padding: 0px 10px 10px 0px;
+  border: 5px solid gray;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-bottom-right-radius: 8%;
+}
+
+legend {
+  margin: 30px 0px 0px 45px;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: monospace;
+  background-color: darkgray;
+  padding: 5px 5px 0px 5px;
+  border-top-right-radius: 8% 30%;
+  border-top-left-radius: 8% 30%;
+}
+
+label {
+  margin: 20px 0px 5px 30px;
+  font-size: 1.1em;
+}
+
+input {
+  width: 150px;
+  margin-left: 30px;
+}
+
+button {
+  margin-top: 5px;
+  margin-left: 30px;
 }
 
 /* ***** FOOTER ***** */
