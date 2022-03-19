@@ -57,7 +57,6 @@ function hourlyTotalArr() {
   }
 }
 
-
 // ********************************* DOM MANIPULATION **********************************
 function renderThead() {// _______________________________________Table header
   let theadElem = document.createElement('thead');
@@ -145,7 +144,7 @@ function handleSubmit(event) {
   userStore.render();
 
   tfootElem.innerHTML = '';
-  for(let i = 0; i < storeList.length; i++) {
+  for(let i = 0; i < cookiesPerHour.length; i++) {
     cookiesPerHour[i] = 0;
   }
   hourlyTotalArr();
